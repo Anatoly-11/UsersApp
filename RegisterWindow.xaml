@@ -1,0 +1,89 @@
+﻿<Window x:Class="UsersApp.wndRegister"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UsersApp"
+        mc:Ignorable="d"                   
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Width="1200" Height="820"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen"  WindowStyle="None">
+    <Grid Background="#ff000000">
+        <!--#ffdadada-->
+        <Border MinWidth="400" Margin="240,0,240,0" Background="White" VerticalAlignment="Center" Padding="30" Width="720" CornerRadius="24" MaxHeight="720" Height="490">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20" Color="LightGray" ShadowDepth="14" Direction="315" RenderingBias="Quality" Opacity="0.75"/>
+            </Border.Effect>
+            <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="10" Text="Регистраця нового пользователя" FontFamily="{DynamicResource MaterialDesignFont}" FontSize="24" FontWeight="Bold" Height="32" Margin="0,0,0,1"/>
+                    <Button   Grid.Row="0" Grid.Column="10" Grid.ColumnSpan="2" x:Name="btnClose" Content="Закрыть" Margin="20,0,0,0" FontSize="10" FontWeight="Normal" Height="32" Click="btnClose_Click"  />
+                    <TextBox  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" x:Name="txtFamily" materialDesign:HintAssist.Hint="Фамилия" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="{DynamicResource MaterialDesignFont}" TabIndex="0" Height="32" Margin="0,0,0,20" VerticalAlignment="Top" />
+                    <TextBox  Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="4" x:Name="txtName" materialDesign:HintAssist.Hint="Имя" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  FontFamily="{DynamicResource MaterialDesignFont}" Margin="20,0,0,20" TabIndex="1" Height="32" VerticalAlignment="Top"/>
+                    <TextBox  Grid.Row="1" Grid.Column="8" Grid.ColumnSpan="4" x:Name="txtPatronic" materialDesign:HintAssist.Hint="Отчество" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="{DynamicResource MaterialDesignFont}" TabIndex="2" Margin="20,0,0,20"  Height="32" VerticalAlignment="Top"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="12" Text="Данные паспорта" FontFamily="{DynamicResource MaterialDesignFont}" FontSize="18" FontWeight="Medium" Height="32" Margin="0,0,0,0"/>
+                    <TextBox  Grid.Row="3" Grid.Column="0"  Grid.ColumnSpan="4" x:Name="txtPassNum" materialDesign:HintAssist.Hint="Номер" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="{DynamicResource MaterialDesignFont}" Height="32" VerticalAlignment="Top" />
+                    <TextBox  Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2" Margin="20,0,0,18" x:Name="txtPassSeria" materialDesign:HintAssist.Hint="Серия" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="{DynamicResource MaterialDesignFont}" Height="32" VerticalAlignment="Top"/>
+                    <TextBox  Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="4" Margin="20,0,0,0" x:Name="txtPassDateGet" materialDesign:HintAssist.Hint="Дата выдачи" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="{DynamicResource MaterialDesignFont}" Height="32" VerticalAlignment="Top"/>
+                    <TextBox  Grid.Row="3" Grid.Column="10" Grid.ColumnSpan="2" x:Name="txtPassCode" materialDesign:HintAssist.Hint="Код" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="{DynamicResource MaterialDesignFont}" Margin="20,0,0,0" Height="32" VerticalAlignment="Top" />
+                    <DockPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="12" Grid.RowSpan="2">
+                        <TextBox  DockPanel.Dock="Bottom" x:Name="txtPassWhoGet" materialDesign:HintAssist.Hint="Кем выдан" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                       AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" FontFamily="{DynamicResource MaterialDesignFont}" MinHeight="64" Height="64" VerticalAlignment="Top" />
+                    </DockPanel>
+                    <ComboBox  Grid.Row="6" Grid.Column="0" x:Name="txtGender" materialDesign:HintAssist.Hint="Пол" Height="32" VerticalAlignment="Top">
+                        <ComboBoxItem Content="Муж">
+                            <ComboBoxItem.FocusVisualStyle>
+                                <Style/>
+                            </ComboBoxItem.FocusVisualStyle>
+                        </ComboBoxItem>
+                        <ComboBoxItem Content="Жен"/>
+                    </ComboBox>
+                    <TextBox  Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4" x:Name="txtBirthday"  materialDesign:HintAssist.Hint="Дата рождения" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="20,-5,0,0" VerticalAlignment="Top" />
+                    <TextBox  Grid.Row="6" Grid.Column="5" Grid.ColumnSpan="4" x:Name="txtPhone" materialDesign:HintAssist.Hint="Телефон" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="20,-8,20,0"/>
+                    <Image  Grid.Row="6" Grid.Column="9 " Grid.ColumnSpan="3" Grid.RowSpan="5" x:Name="imgPhoto" MouseDown="imgPhoto_MouseDown" Margin="0,8,0,1"  />
+                    <Button  Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="5" x:Name="btnActPlace" Content="Место проживания" FontSize="10" FontWeight="Normal" Height="24" Margin="0,5,20,0"  />
+                    <Button  Grid.Row="7" Grid.Column="5" Grid.ColumnSpan="4" x:Name="btnRegPlace" Content="Место регистрации" FontSize="10" FontWeight="Normal" Height="24" Margin="0,5,20,0" />
+                    <Button  Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="3"  x:Name="btnBornPlace" Content="Место рождения" FontSize="10" FontWeight="Normal" Height="24" Margin="0,5,20,0"/>
+                    <Button  Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="3" x:Name="btnSpouse" Content="Жена(муж)" FontSize="10" FontWeight="Normal" Height="24" Margin="0,5,20,0" />
+                    <Button  Grid.Row="8" Grid.Column="6" Grid.ColumnSpan="3" x:Name="btnChildren" Content="Дети" Margin="0,5,20,0" FontSize="10" FontWeight="Normal"  Height="24" />
+                    <TextBox  Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,0,0,0" x:Name="txtLogin"  materialDesign:HintAssist.Hint="Логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"/>
+                    <PasswordBox Grid.Row="9" Grid.Column="4" Grid.ColumnSpan="4" Margin="20,0,0,0" x:Name="txtPswrd" materialDesign:HintAssist.Hint="Пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"  VerticalAlignment="Top"/>
+                    <Button  Grid.Row="9" Grid.Column="8" x:Name="btnShowPswd" Margin="-16,0,0,0" FontSize="10" FontWeight="Normal" Width="30" Height="30"/>
+                    <TextBox  Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,-5,0,0" x:Name="txtEmail"  materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" />
+                    <PasswordBox Grid.Row="9"  Grid.Column="4" Grid.ColumnSpan="4" Margin="20,32,0,5" x:Name="txtRepPswrd" materialDesign:HintAssist.Hint="Повтор" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Grid.RowSpan="2"/>
+                    <Button  Grid.Row="10" Grid.Column="8" Margin="-16,0,0,4" x:Name="btnRepShowPswd" FontSize="10" FontWeight="Normal" Width="30" VerticalAlignment="Top" Height="30" />
+                    <Button  Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="12" x:Name="btnReg" Content="Зарегистрироваться" Click="btnReg_Click"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
